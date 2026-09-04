@@ -1,0 +1,23 @@
+---
+- name: Install Start and Enable Nginx
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Installing Nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: true
+
+    - name: Starting Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Using command module
+      command: echo "nginx installed"
+
+    - name: deploying a webpage
+      copy: src="index.html" dest="/usr/share/nginx/html/index.html"

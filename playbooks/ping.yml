@@ -1,0 +1,11 @@
+---
+- name: My First Playbook with ping Module
+  hosts: all
+
+  tasks: 
+  - name: Test Connectivity
+    ping:
+
+
+# check syntax ---> ansible-playbook --syntax-check ping.yml
+#to run ansible-playbook ping.yml

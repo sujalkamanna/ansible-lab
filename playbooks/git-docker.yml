@@ -1,0 +1,13 @@
+---
+- name: Install Git Docker and start Docker
+  hosts: all
+  become: true
+  tasks:
+  - name: Installing Git
+    apt: name=git state=present
+
+  - name: Installing Docker
+    apt: name=docker.io state=present
+    
+  - name: Starting Docker
+    service: name=docker state=started

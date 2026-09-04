@@ -1,0 +1,13 @@
+---
+- name: Uninstall Apache
+  hosts: all
+  become: true
+  tasks:
+    - name: Uninstall Apache
+      apt:
+        name: apache2
+        state: absent
+
+    - name: Print Message
+      debug:
+        msg: "Apache Un-Installed"

@@ -1,0 +1,9 @@
+---
+- name: Create user and copy files
+  hosts: all
+  tasks:
+  - name: creating user
+    user: name=raj state=present
+
+  - name: copy files
+    copy: src="file.txt" dest="/home/ubuntu/"
