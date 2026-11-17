@@ -1,0 +1,10 @@
+---
+- name: Lookup playbooks
+  hosts: all
+  become: true
+  vars:
+    creds: "{{lookup('file','/root/creds.txt')}}"
+  tasks:
+    - debug:
+        msg: My Credentials are {{creds}}
+        

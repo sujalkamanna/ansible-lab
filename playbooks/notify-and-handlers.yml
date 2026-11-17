@@ -1,0 +1,16 @@
+---
+
+- name: Notify and handlers
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Instaling Apache
+      apt: name=apache2 state=present
+      notify: Starting Apache
+
+  handlers:
+    
+    - name: Starting Apache
+      service: name=apache2 state=started
+      ignore_errors: yes

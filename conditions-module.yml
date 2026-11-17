@@ -1,0 +1,16 @@
+# using conditions in playbook
+
+# example installing softwares in theinstance which has different os
+
+---
+- name: Installing Packages Usnh WHen module
+  become: yes
+  hosts: all
+  tasks:
+    - name: Installing Git
+      apt: name=apache2 state=present
+      when: ansible_os_family== "Debian"
+
+    - name: Installing Git
+      yum: name=apache2 state=present
+      when: ansible_os_family== "RedHat"

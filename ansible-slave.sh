@@ -1,3 +1,6 @@
+
+#!/bin/bash
+
 # ==========================================
 # ANSIBLE SLAVE / MANAGED NODE SETUP
 # Ubuntu on AWS EC2
@@ -24,7 +27,6 @@ sudo mkdir -p /home/ubuntu/.ssh
 sudo chown ubuntu:ubuntu /home/ubuntu/.ssh
 sudo chmod 700 /home/ubuntu/.ssh
 
-
 # ==========================================
 # 6. ADD MASTER PUBLIC KEY
 # ==========================================
@@ -36,26 +38,6 @@ echo ""
 
 sudo tee -a /home/ubuntu/.ssh/authorized_keys > /dev/null
 
-
-When you run that command, paste the Master's key:
-
-ssh-rsa AAAA... ubuntu@master
-
-Then press:
-
-CTRL + D
-
-The -a is important:
-
-tee -a
-     ↑
-  APPEND
-
-It adds the Master key without deleting your existing key.
-
-Then continue:
-
-
 # ==========================================
 # 7. FIX PERMISSIONS
 # ==========================================
@@ -66,7 +48,7 @@ sudo chmod 600 /home/ubuntu/.ssh/authorized_keys
 # 8. Restart SSH
 sudo systemctl restart ssh
 
-# 9. Verify
+# 9. Verify SSH service
 sudo systemctl is-active ssh
 
 echo "=========================================="

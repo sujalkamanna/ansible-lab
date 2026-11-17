@@ -1,0 +1,19 @@
+# passing variable value from command
+
+
+---
+- name: Dynamic var playbooks
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Installing Git
+      apt:
+        name: "{{ a }}"
+        state: present
+        update_cache: yes
+
+    - name: Installing Maven
+      apt:
+        name: "{{ b }}"
+        state: present

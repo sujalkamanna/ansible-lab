@@ -1,0 +1,15 @@
+# shell commands inside playbooks
+
+# using shell module
+
+---
+- name: shell in playbook
+  become: yes
+  hosts: all
+  tasks:
+    - name: INstalling Git
+      shell: apt install git -y
+    - name: installing apache
+      command: apt install apache2 -y
+    - name: Installing maven
+      raw: apt install maven -y

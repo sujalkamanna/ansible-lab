@@ -1,0 +1,20 @@
+
+---
+- name: LOOP Playbook
+  hosts: all
+  become: yes
+  gather_facts: false
+
+  tasks:
+    - name: Installing Softwares
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - git
+        - tree
+        - docker.io
+        - maven
+        - apache2
+
+# simply execute ansible-playbook loop.yml

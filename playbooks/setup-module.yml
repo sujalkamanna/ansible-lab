@@ -1,0 +1,5 @@
+# ansible all -m setup
+
+
+# this command is used to gather system information (facts) from all hosts configured in your Ansible inventory.
+

@@ -76,7 +76,7 @@ sudo tee /etc/ansible/hosts > /dev/null <<'EOL'
 
 # Add your Slave / Managed Nodes below
 
-slave1 ansible_host=172.31.3.236
+slave1 ansible_host=172.31.33.205
 
 # Example additional nodes:
 # slave2 ansible_host=172.31.4.10

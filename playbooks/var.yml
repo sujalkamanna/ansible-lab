@@ -1,0 +1,16 @@
+#using variables in ansible playbooks 
+# static ones in this
+---
+- name: Static Variables Playbook
+  hosts: all
+  become: yes
+  vars:
+    a: git #created variable a
+    b: maven
+
+  tasks:
+  - name: installing git
+    apt: name={{a}} state=present
+  - name: installing maven
+    apt: name={{b}} state=present
+    
